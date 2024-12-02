@@ -4,14 +4,16 @@ class ActorsController < ApplicationController
   end
 
   def create
-    @actor = Actor.new(params[:id])
+    @actor = Actor.new(name: params[:name] )
     if @actor.save
-      redirect_to @actor
+      redirect_to @actor, notice: 'ator cadastrado com sucesso'
+    else
+      redirect_to root_path
     end
   end
 
   def show
-    @movies = Movie.all
     @actor = Actor.find(params[:id])
+    @movies = Movie.all    
   end
 end

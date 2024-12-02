@@ -13,5 +13,6 @@ describe 'User create actors' do
     click_on 'Criar Ator'
 
     expect(page).to have_content 'Cadastrar Papel'
+    expect(page).to have_content 'Laura Dern'
   end
 end
