@@ -1,0 +1,28 @@
+
+  <div>
+    <ul> 
+      <li><%= @actor.name %></li>
+      <% @actor.roles.each do |role|%>
+      <li><%= role.name %> - <%= role.film.title %> </li>
+      <% end %>
+    </ul>
+
+  </div>
+
+
+<div>
+  <h2> Cadastrar Papel </h2>
+  <%= form_with url: actor_roles_path(@actor.id) do |f| %>
+    <div class="mb-6">
+      <%= f.label :name, 'Nome', class: 'form-label' %>
+      <%= f.text_field :name, class: 'form-field' %>
+    </div>
+    <div class="mb-6">
+      <%= f.label :movie_id, 'Filmes', class: 'form-label' %>
+      <%= f.collection_select :movie_id, @movies, :id, :title, class: 'form-field' %>
+    </div>
+    <div>
+      <%= f.submit 'Adicionar Papel', class: 'btn-confirm' %>
+    </div>
+  <% end %>
+</div>

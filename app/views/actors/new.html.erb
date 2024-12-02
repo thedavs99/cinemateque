@@ -1,0 +1,9 @@
+<%= form_with(model: @actor) do |f| %>
+  <div class="mb-6">
+    <%= f.label :name, class: 'form-label' %>
+    <%= f.text_field :name, class: 'form-field' %>
+  </div>
+  <div>
+    <%= f.submit 'Criar Ator', class: 'btn-confirm' %>
+  </div>
+<% end %>
