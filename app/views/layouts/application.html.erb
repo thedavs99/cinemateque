@@ -31,6 +31,7 @@
                 <% if user_signed_in? %>
                   <li class="mb-5"><%= button_link 'Cinemas', movie_theaters_path %></li>
                   <li class="mb-5"><%= button_link 'Filmes', movies_path %></li>
+                  <li class="mb-5"><%= button_link 'Cadastrar Ator', new_actor_path %></li>
                   <li class="mb-5"><%= delete_button 'Sair', destroy_user_session_path %></li>
                 <% end %>
               </ul>
