@@ -41,6 +41,10 @@ RSpec.configure do |config|
   config.before(:each, type: :system) do
     driven_by :rack_test
   end
+
+  config.define_derived_metadata(file_path: %r{spec/request}) do |metadata|
+    metadata[:type] = :request
+  end
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
